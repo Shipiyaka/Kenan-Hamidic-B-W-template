@@ -96,3 +96,60 @@ a:visited {
 .button:hover:after {
   opacity: 1;
 }
+
+.round {
+  position: absolute;
+  bottom: 10%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+.round.darker {
+  background-color: #e0e0e0;
+  bottom: 7%;
+}
+
+.round.darkest {
+  background-color: #d0d0d0;
+  bottom: 4%;
+}
+
+#growth {
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+  position: relative;
+}
+
+.year {
+  color: #fefefe;
+}
+
+.event {
+  color: #757575;
+}
+
+.bg_line {
+  position: absolute;
+  background-color: #ffffff;
+  width: 6px;
+  height: 100%;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.bg_bubble {
+  position: absolute;
+  background-color: #1d1d1d;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -17px;
+  top: 15%;
+}
