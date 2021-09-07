@@ -9,6 +9,8 @@ body {
 html,
 body {
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -26,7 +28,7 @@ text {
 }
 
 header {
-  max-width: 50%;
+  max-width: 52%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,10 +37,24 @@ header {
 
 header .logo {
   max-width: 50px;
+  flex: 1;
+}
+
+.logo img {
+  width: 58px;
+  height: 58px;
+  max-width: none;
 }
 
 header .mnu_top {
   list-style-type: none;
+  flex: 1;
+  justify-content: end;
+  max-width: 50%;
+}
+
+.mnu_top:first-child {
+  text-align: end;
 }
 
 header .mnu_top li {
@@ -66,6 +82,7 @@ header .mnu_top li a:hover {
   height: calc(100% - 51px);
   height: -moz-calc(100% - 51px);
   height: -webkit-calc(100% - 51px);
+  position: relative;
 }
 
 #main_banner .container {
@@ -119,21 +136,21 @@ a:visited {
   opacity: 1;
 }
 
-.round {
+.circle {
   position: absolute;
   bottom: 10%;
-  width: 10px;
-  height: 10px;
+  width: 0.7em;
+  height: 0.7em;
   border-radius: 50%;
   background-color: #f0f0f0;
 }
 
-.round.darker {
+.circle.darker {
   background-color: #e0e0e0;
   bottom: 7%;
 }
 
-.round.darkest {
+.circle.darkest {
   background-color: #d0d0d0;
   bottom: 4%;
 }
@@ -240,16 +257,17 @@ a:visited {
 
 .back_town {
   position: absolute;
-  bottom: -1%;
+  bottom: -5%;
+  width: 110%;
 }
 
 .back_town.init {
-  right: 6.6%;
+  right: -0.9%;
 }
 
 .back_town.shade {
   bottom: 5%;
-  right: 11%;
+  right: 3%;
 }
 
 #team {
@@ -306,9 +324,22 @@ a:visited {
   top: 50%;
 }
 
+.socials {
+  padding: 5px;
+}
+
+.instagram {
+  padding-right: 5px;
+}
+
+.socials img {
+  width: 20px;
+  height: 20px;
+}
+
 .triangle {
   position: absolute;
-  bottom: -1px;
+  bottom: -7px;
 }
 
 #services {
@@ -374,15 +405,40 @@ a:visited {
   height: 100%;
 }
 
+#contact_us .team.header {
+  padding-top: 6%;
+}
+
 .navigation {
-  width: 40%;
+  width: 45%;
   display: flex;
   margin: 0 auto;
-  align-items: center;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
   padding-top: 5%;
+}
+
+.navigation img {
+  width: 25px;
+  height: 25px;
+}
+
+.nav {
+  width: 15%;
+}
+
+.nav.n1 {
+  flex: 1;
+}
+
+.nav.n2 {
+  flex: 1;
+}
+
+.nav.n3 {
+  flex: 1;
+  word-wrap: break-word;
 }
 
 .navigation h1 {
@@ -409,6 +465,7 @@ a:visited {
   border: 0.5px #1d1d1d solid;
   line-height: 40px;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 .form_inner input[type="submit"] {
@@ -416,12 +473,14 @@ a:visited {
   background: #1d1d1d;
   color: white;
   font-size: 14px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .form_inner input[type="submit"]:hover {
   background-color: #fff;
   color: #1d1d1d;
-  border: 1px #1d1d1d solid;
+  border: 0.5px #1d1d1d solid;
 }
 
 .form_inner input[type="submit"]:hover:after {
@@ -433,46 +492,15 @@ a:visited {
   text-decoration: none;
   color: #1d1d1d;
   transition: opacity 0.1s linear;
+  padding: 0 20px;
 }
 
 .form_inner textarea {
   resize: none;
 }
 
-.copyright p {
+footer p {
   margin: 0 auto;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   text-align: center;
-}
-
-#container {
-  display: flex;
-  background-color: lightgrey;
-  margin: 0 auto;
-}
-
-.flex {
-  flex: 1;
-  flex-shrink: 1;
-  display: inline-flex;
-  justify-content: center;
-}
-
-.flex > div {
-  height: 100px;
-  border: 2px dashed red;
-  text-align: center;
-  padding: 5px;
-}
-
-.left div {
-  margin-right: auto;
-}
-
-.center.flex {
-  flex-shrink: 2;
-}
-
-.right div {
-  margin-left: auto;
 }
