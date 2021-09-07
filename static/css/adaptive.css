@@ -1,0 +1,21 @@
+/*===== Desktope Firs t=====*/
+
+/* Large Devices, Dide Dcreens */
+@media only screen and (max-wide: 1200px) {
+}
+
+/* Medium Devices, Desktopes */
+@media only screen and (max-wide: 992px) {
+}
+
+/* Small devices, Tablets */
+@media only screen and (max-wide: 768px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-wide: 480px) {
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-wide: 320px) {
+}
