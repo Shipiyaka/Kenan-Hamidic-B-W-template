@@ -11,6 +11,7 @@ body {
   height: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -22,16 +23,53 @@ img {
   margin: 0;
 }
 
+#main_banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: calc(100vh - 58px);
+  position: relative;
+}
+
+#main_banner .container {
+  max-width: 50%;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  color: #1d1e1f;
+  margin: 0;
+  @media only screen and (max-width: 668px) {
+    margin-bottom: 20px;
+  }
+}
+
+p {
+  font-family: "Merriweather", serif;
+  color: #989696;
+  font-style: italic;
+  font-size: 15px;
+}
+
+#main_banner p {
+  padding-bottom: 20px;
+}
+
 header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
+  height: 58px;
 }
 
 header .container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
@@ -47,67 +85,72 @@ header .logo {
   max-width: none;
 }
 
-// .burger {
-//   @media only screen and (min-width: 769px) {
-//     display: none;
-//   }
-// }
+.burger {
+  @media only screen and (min-width: 669px) {
+    display: none;
+  }
+}
 
-// #check-burger {
-//   // display: none;
-// }
+#check-burger {
+  display: none;
+}
 
-// #check-burger:checked ~ .mnu-top {
-//   opacity: 1;
-// }
+#check-burger:checked ~ .mnu_top {
+  opacity: 1;
+}
 
-// .burger-span {
-//   display: block;
-//   cursor: pointer;
-//   padding: 10px;
-//   margin-right: -10px;
-// }
+.burger-span {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: -10px;
+  position: absolute;
+  right: 10%;
+  top: 28%;
+}
 
-// .burger-line {
-//   width: 30px;
-//   height: 2px;
-//   background: black;
-//   transition: 0.3s all;
-// }
+.burger-line {
+  width: 30px;
+  height: 2px;
+  background: black;
+  transition: 0.3s all;
+}
 
-// .second {
-//   position: absolute;
-// }
+.second {
+  position: absolute;
+}
 
-// .first,
-// .third {
-//   margin-bottom: 5px;
-// }
+.first,
+.third {
+  margin-bottom: 5px;
+}
 
-// #check-burger:checked ~ label .burger-span .burger-line.first {
-//   display: none;
-// }
+#check-burger:checked ~ label .burger-span .burger-line.first {
+  display: none;
+}
 
-// #check-burger:checked ~ label .burger-span .burger-line.second {
-//   transform: rotate(45deg);
-//   background: #f8c10c;
-//   height: 2px;
-// }
+#check-burger:checked ~ label .burger-span {
+  top: 23px;
+}
 
-// #check-burger:checked ~ label .burger-span .burger-line.third {
-//   transform: rotate(-45deg);
-//   background: #f8c10c;
-// }
+#check-burger:checked ~ label .burger-span .burger-line.second {
+  transform: rotate(45deg);
+  height: 2px;
+}
 
-// #check-burger:checked ~ label .burger-span .burger-line.fourth {
-//   display: none;
-// }
+#check-burger:checked ~ label .burger-span .burger-line.third {
+  transform: rotate(-45deg);
+}
+
+#check-burger:checked ~ label .burger-span .burger-line.fourth {
+  display: none;
+}
 
 header .mnu_top.pc {
   list-style-type: none;
   flex: 1;
-  justify-content: end;
-  max-width: 50%;
+  margin-left: 30px;
+  // max-width: 50%;
   @media only screen and (max-width: 668px) {
     display: none;
   }
@@ -126,6 +169,7 @@ header .mnu_top.mob {
   z-index: 1;
   width: 100%;
   transition: 0.5s all;
+  left: 0;
   @media only screen and (min-width: 669px) {
     display: none;
   }
@@ -153,38 +197,6 @@ header .mnu_top li a {
 
 header .mnu_top li a:hover {
   color: #686666;
-}
-
-#main_banner {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-}
-
-#main_banner .container {
-  max-width: 50%;
-}
-
-h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-size: 40px;
-  color: #1d1e1f;
-  margin: 0;
-}
-
-p {
-  font-family: "Merriweather", serif;
-  color: #989696;
-  font-style: italic;
-  font-size: 15px;
-}
-
-#main_banner p {
-  padding-bottom: 20px;
 }
 
 .button {
@@ -239,6 +251,9 @@ a:visited {
   height: 100%;
   background-color: #1d1d1d;
   position: relative;
+  @media only screen and (max-width: 481px) {
+    height: 120%;
+  }
 }
 
 .bg_line {
@@ -288,22 +303,34 @@ a:visited {
 .phase.ph1 {
   text-align: right;
   left: 10%;
+  @media only screen and (max-width: 668px) {
+    left: 7%;
+  }
 }
 
 .phase.ph2 {
   top: 30%;
   right: 10%;
+  @media only screen and (max-width: 668px) {
+    right: 7%;
+  }
 }
 
 .phase.ph3 {
   top: 50%;
   text-align: right;
   left: 10%;
+  @media only screen and (max-width: 668px) {
+    left: 7%;
+  }
 }
 
 .phase.ph4 {
   top: 70%;
   right: 10%;
+  @media only screen and (max-width: 668px) {
+    right: 7%;
+  }
 }
 
 .year {
@@ -361,11 +388,20 @@ a:visited {
   margin: 0 auto;
   padding-top: 3%;
   text-align: center;
+  @media only screen and (max-width: 668px) {
+    width: auto;
+  }
 }
 
 .cards {
   width: 28%;
   text-align: center;
+  @media only screen and (max-width: 668px) {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+  }
 }
 
 .cards h1 {
@@ -373,34 +409,78 @@ a:visited {
   font-weight: 300;
 }
 
+#team .pic img {
+  @media only screen and (max-width: 668px) {
+    width: 120px;
+  }
+  @media only screen and (max-width: 481px) {
+    width: 70px;
+  }
+}
+
 .pic {
   margin-bottom: 20px;
   filter: grayscale(100%);
+  @media only screen and (max-width: 668px) {
+    margin-bottom: 10px;
+  }
+}
+
+#team h1 {
+  @media only screen and (max-width: 668px) {
+    margin-bottom: 10px;
+  }
 }
 
 .card {
   position: absolute;
   width: 20%;
+  @media only screen and (max-width: 668px) {
+    width: 100%;
+    position: relative;
+  }
+}
+
+.card:not(:last-child) {
+  @media only screen and (max-width: 668px) {
+    padding-bottom: 20px;
+  }
 }
 
 .card.low.m1 {
   left: 15%;
   top: 50%;
+  @media only screen and (max-width: 668px) {
+    left: 0;
+    top: 0;
+  }
 }
 
 .card.high {
   top: 30%;
   left: 40%;
+  @media only screen and (max-width: 668px) {
+    left: 0;
+    top: 0;
+  }
 }
 
 .card.low.m2 {
   left: 40%;
   top: 50%;
+  @media only screen and (max-width: 668px) {
+    left: 0;
+    top: 0;
+  }
 }
 
 .card.low.m3 {
   right: 15%;
   top: 50%;
+  @media only screen and (max-width: 668px) {
+    left: 0;
+    top: 0;
+  }
 }
 
 .socials {
@@ -419,6 +499,12 @@ a:visited {
 .triangle {
   position: absolute;
   bottom: -7px;
+  width: 100%;
+}
+
+.triangle img {
+  object-fit: cover;
+  width: 100%;
 }
 
 #services {
@@ -438,6 +524,9 @@ a:visited {
   margin: 0 auto;
   padding-top: 7%;
   text-align: center;
+  @media only screen and (max-width: 668px) {
+    width: 90%;
+  }
 }
 
 .ellipse {
@@ -482,10 +571,16 @@ a:visited {
 
 #contact_us {
   height: 100%;
+  @media only screen and (max-width: 668px) {
+    height: auto;
+  }
 }
 
 #contact_us .team.header {
   padding-top: 6%;
+  @media only screen and (max-width: 668px) {
+    width: auto;
+  }
 }
 
 .navigation {
@@ -496,6 +591,10 @@ a:visited {
   justify-content: space-around;
   position: relative;
   padding-top: 5%;
+  @media only screen and (max-width: 668px) {
+    flex-direction: column;
+    width: auto;
+  }
 }
 
 .navigation img {
@@ -505,6 +604,16 @@ a:visited {
 
 .nav {
   width: 15%;
+  @media only screen and (max-width: 668px) {
+    width: auto;
+  }
+}
+
+.nav:not(:last-child) {
+  padding-right: 10px;
+  @media only screen and (max-width: 668px) {
+    padding-right: 0;
+  }
 }
 
 .nav.n1 {
@@ -522,12 +631,18 @@ a:visited {
 
 .navigation h1 {
   padding-bottom: 7px;
+  @media only screen and (max-width: 668px) {
+    margin: 0;
+  }
 }
 
 .contact_form {
   width: 70%;
   margin: 0 auto;
   position: relative;
+  @media only screen and (max-width: 668px) {
+    width: auto;
+  }
 }
 
 .form_inner {
@@ -541,7 +656,7 @@ a:visited {
   padding: 0 20px;
   margin-bottom: 10px;
   background: #fff;
-  border: 0.5px #1d1d1d solid;
+  border: 1px #1d1d1d solid;
   line-height: 40px;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -559,7 +674,7 @@ a:visited {
 .form_inner input[type="submit"]:hover {
   background-color: #fff;
   color: #1d1d1d;
-  border: 0.5px #1d1d1d solid;
+  border: 1px #1d1d1d solid;
 }
 
 .form_inner input[type="submit"]:hover:after {
