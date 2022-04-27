@@ -44,6 +44,7 @@ h1 {
   margin: 0;
   @media only screen and (max-width: 668px) {
     margin-bottom: 20px;
+    font-size: 36px;
   }
 }
 
@@ -150,7 +151,6 @@ header .mnu_top.pc {
   list-style-type: none;
   flex: 1;
   margin-left: 30px;
-  // max-width: 50%;
   @media only screen and (max-width: 668px) {
     display: none;
   }
@@ -208,6 +208,9 @@ header .mnu_top li a:hover {
   font-size: 10px;
   font-weight: 600;
   color: #1d1e1f;
+  @media only screen and (max-width: 668px) {
+    padding: 13px 38px;
+  }
 }
 
 .button a,
@@ -234,6 +237,10 @@ a:visited {
   height: 0.7em;
   border-radius: 50%;
   background-color: #f0f0f0;
+  @media only screen and (max-width: 668px) {
+    width: 0.5em;
+    height: 0.5em;
+  }
 }
 
 .circle.darker {
@@ -251,8 +258,11 @@ a:visited {
   height: 100%;
   background-color: #1d1d1d;
   position: relative;
-  @media only screen and (max-width: 481px) {
-    height: 120%;
+  @media only screen and (max-width: 668px) and (orientation: landscape) {
+    height: 180%;
+  }
+  @media only screen and (max-width: 481px) and (orientation: landscape) {
+    height: 200%;
   }
 }
 
@@ -349,7 +359,7 @@ a:visited {
 
 .filler {
   width: 100%;
-  height: 30%;
+  min-height: 15%;
   background-color: #1d1d1d;
   position: relative;
   top: -2px;
@@ -378,7 +388,6 @@ a:visited {
 
 #team {
   width: 100%;
-  height: 105%;
   background-color: #fff;
   position: relative;
 }
@@ -386,7 +395,7 @@ a:visited {
 .team.header {
   width: 30%;
   margin: 0 auto;
-  padding-top: 3%;
+  padding: 6% 0;
   text-align: center;
   @media only screen and (max-width: 668px) {
     width: auto;
@@ -394,14 +403,25 @@ a:visited {
 }
 
 .cards {
-  width: 28%;
+  width: 100%;
+  position: relative;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
   @media only screen and (max-width: 668px) {
     width: 90%;
     display: flex;
     flex-direction: column;
     margin: 40px auto;
+    margin-bottom: 0;
+    padding-bottom: 40px;
+    align-items: center;
   }
+}
+
+.card p {
+  min-height: 40px;
 }
 
 .cards h1 {
@@ -433,11 +453,14 @@ a:visited {
 }
 
 .card {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 20%;
+  margin: 30px;
   @media only screen and (max-width: 668px) {
-    width: 100%;
+    width: 75%;
     position: relative;
+    margin: 0;
   }
 }
 
@@ -447,40 +470,12 @@ a:visited {
   }
 }
 
-.card.low.m1 {
-  left: 15%;
-  top: 50%;
-  @media only screen and (max-width: 668px) {
-    left: 0;
-    top: 0;
-  }
+.card.low {
+  justify-content: end;
 }
 
-.card.high {
-  top: 30%;
-  left: 40%;
-  @media only screen and (max-width: 668px) {
-    left: 0;
-    top: 0;
-  }
-}
-
-.card.low.m2 {
-  left: 40%;
-  top: 50%;
-  @media only screen and (max-width: 668px) {
-    left: 0;
-    top: 0;
-  }
-}
-
-.card.low.m3 {
-  right: 15%;
-  top: 50%;
-  @media only screen and (max-width: 668px) {
-    left: 0;
-    top: 0;
-  }
+.card.center {
+  justify-content: center;
 }
 
 .socials {
@@ -496,10 +491,14 @@ a:visited {
   height: 20px;
 }
 
+#team .triangle {
+  margin-top: 20%;
+}
+
 .triangle {
-  position: absolute;
-  bottom: -7px;
   width: 100%;
+  display: flex;
+  background-color: #1d1d1d;
 }
 
 .triangle img {
@@ -509,7 +508,6 @@ a:visited {
 
 #services {
   width: 100%;
-  height: 100%;
   background-color: #fff;
   position: relative;
   background-color: #1d1d1d;
@@ -535,12 +533,12 @@ a:visited {
 }
 
 #filler {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-  height: 35%;
+  justify-content: space-between;
+  min-height: 30%;
   background-color: #1d1d1d;
-  top: -1px;
   position: relative;
 }
 
@@ -570,10 +568,7 @@ a:visited {
 }
 
 #contact_us {
-  height: 100%;
-  @media only screen and (max-width: 668px) {
-    height: auto;
-  }
+  min-height: 80%;
 }
 
 #contact_us .team.header {
